@@ -15,7 +15,7 @@ fn no_of_players() -> u32 {
         let no_of_players: u32 = match no_of_players.trim().parse() {
             Ok(num) => num,
             Err(_) => {
-                println!("Only Number Allowed, Try Again");
+                println!("Only Number Allowed, Please Enter only number's and Try Again");
                 continue;
             }
         };
