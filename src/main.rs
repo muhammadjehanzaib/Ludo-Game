@@ -36,7 +36,7 @@ fn main() {
         io::stdin()
             .read_line(&mut names)
             .expect("Failed to read line");
-        let names = names.trim().parse().expect("Some thing is worng");
+        let names = names.trim().parse().expect("Some thing is worng, Please try again");
         name_players.push(names);
     }
     let mut ludo = HashMap::new();
