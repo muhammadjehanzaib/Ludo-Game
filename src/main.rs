@@ -52,14 +52,14 @@ fn main() {
         let mut current_dice = 0;
 
         for players in 0..no_of_players {
-            let dice = rand::thread_rng().gen_range(1, 7);
+            let dice = rand::thread_rng().2);
 
             if dice == 6 {
                 current_dice = current_dice + dice;
-                let dice = rand::thread_rng().gen_range(1, 7);
+                let dice = rand::thread_rng().gen_range(1..=6);
                 if dice == 6 {
                     current_dice = current_dice + dice;
-                    let dice = rand::thread_rng().gen_range(1, 7);
+                    let dice = rand::thread_rng().gen_range(1..=6);
                     if dice == 6 {
                         current_dice = 0;
                     } else {
