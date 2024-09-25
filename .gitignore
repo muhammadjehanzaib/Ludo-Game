@@ -1,0 +1,26 @@
+# Ignore build artifacts
+/target/
+
+# Ignore Cargo.lock if you want to allow developers to regenerate it
+# Uncomment the next line if you do not want to track Cargo.lock
+# Cargo.lock
+
+# Ignore editor-specific files
+*.rs.bk
+*.swp
+*.swo
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore IDE configurations (example for VSCode)
+.vscode/
+.idea/
+
+# Ignore any log files
+*.log
+
+# Ignore any temporary files created by the operating system
+.DS_Store
+Thumbs.db
