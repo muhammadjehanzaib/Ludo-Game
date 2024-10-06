@@ -28,6 +28,9 @@ fn no_of_players() -> u32 {
 fn main() {
     println!("Welcome To LUDO");
     let no_of_players = no_of_players();
+    let dice_starting_positoin: u8 = 1;
+    let dice_ending_positoin: u8 = 6;
+    let players_destination_score: u8 = 100;
 
     let mut name_players: Vec<String> = Vec::new();
 
@@ -53,14 +56,14 @@ fn main() {
         let mut current_dice = 0;
 
         for players in 0..no_of_players {
-            let dice = rand::thread_rng().gen_range(1..=6);
+            let dice = rand::thread_rng().gen_range(dice_starting_positoin..=dice_ending_positoin);
 
             if dice == 6 {
                 current_dice = current_dice + dice;
-                let dice = rand::thread_rng().gen_range(1..=6);
+                let dice = rand::thread_rng().gen_range(dice_starting_positoin..=dice_ending_positoin);
                 if dice == 6 {
                     current_dice = current_dice + dice;
-                    let dice = rand::thread_rng().gen_range(1..=6);
+                    let dice = rand::thread_rng().gen_range(dice_starting_positoin..=dice_ending_positoin);
                     if dice == 6 {
                         current_dice = 0;
                     } else {
@@ -77,7 +80,7 @@ fn main() {
                 Some(expr) => expr,
                 None => &0,
             };
-            if pre_dice_score + current_dice == 100 {
+            if pre_dice_score + current_dice == players_destination_score {
                 println!(
                     "Turn {} Dice Roll of Player {} -    {:?} is      {}    amd Total is      {}",
                     turn,
