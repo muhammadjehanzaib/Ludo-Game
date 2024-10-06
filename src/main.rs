@@ -2,6 +2,7 @@ use rand::Rng;
 use std::collections::HashMap;
 use std::io;
 use std::process;
+
 fn no_of_players() -> u32 {
     let no_of_players: u32 = loop {
         println!("Enter Number of Players!");
@@ -52,7 +53,7 @@ fn main() {
         let mut current_dice = 0;
 
         for players in 0..no_of_players {
-            let dice = rand::thread_rng().2);
+            let dice = rand::thread_rng().gen_range(1..=6);
 
             if dice == 6 {
                 current_dice = current_dice + dice;
@@ -117,10 +118,10 @@ fn main() {
         }
         for players in 0..no_of_players {
             for j in players + 1..no_of_players {
-                if ludo.get(&name_players[players as usize]) == ludo.get(&name_players[j as usize])
-                {
+                if ludo.get(&name_players[players as usize]) == ludo.get(&name_players[j as usize]) {
                     println!(
-                        "        \n   Alas!     {:?}      Kicked by      {:?}",
+                        "        
+   Alas!     {:?}      Kicked by      {:?}",
                         &name_players[players as usize], &name_players[j as usize]
                     );
                     ludo.insert(&name_players[players as usize], 0);
